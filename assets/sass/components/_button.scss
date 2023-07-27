@@ -1,0 +1,100 @@
+.btn {
+
+    &,
+    // .btn
+    &:link,
+    // .btn:link
+    &:visited {
+        // .btn:visited
+        padding: 1.5rem 4rem;
+        text-decoration: none;
+        display: inline-block;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 1.6rem;
+        border: 0px;
+        border-radius: 10rem;
+        transition: all 0.2s;
+        animation: slideUp 1s ease-in-out;
+        position: relative;
+
+    }
+
+    &-white {
+        // .btn-white
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::before {
+            content: '';
+            background-color: $color-white;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10rem;
+            z-index: -1;
+            transition: all .4s ease-in-out;
+        }
+    }
+
+    &-green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::before {
+            content: '';
+            background-color: $color-primary;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10rem;
+            z-index: -1;
+            transition: all .4s ease-in-out;
+        }
+    }
+
+    &:hover {
+        transform: translate(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-dark, .2);
+
+        &::before {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+}
+
+
+.btn-text {
+
+    &,
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        padding: .3rem;
+        border-bottom: 1px solid $color-primary;
+        transition: all .2s ease-in-out;
+        text-transform: capitalize;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-dark, .2);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-dark, .2);
+        transform: translateY(0);
+    }
+}

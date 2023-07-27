@@ -1,0 +1,30 @@
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin-bottom: 8rem;
+    // background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    @include lg(to right, $color-primary-light, $color-primary-dark);
+    @include backgroundClip;
+    transition: all .2s ease-in-out;
+    &:hover, &:focus{
+        transform: scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-dark, .2);
+    }
+}
+
+.heading-ter{
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.paragraph{
+    font-size: 1.6rem;
+    &:not(:last-child){  //if paragraph who is not last child of his parent
+        margin-bottom: 3rem;
+    }
+}
+
+//@ >> term which starts with @ called as directives >> directives means who defines a structure

@@ -1,0 +1,58 @@
+.footer{
+    background-color: $color-grey-dark-1;
+    padding: 10rem 0;
+    color: $color-white;
+    &-logo{
+        width: 15rem;
+        display: inline-block;
+        >img{
+            width: 100%;
+        }
+    }
+
+    &-navigation{
+        list-style: none;
+        padding: 0;
+    }
+
+    &-list{
+        display: inline-block;
+
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+
+        &:last-child{
+            margin: 0;
+        }
+
+        // a:link, a:visited{
+        //     text-transform: uppercase;
+        //     color: $color-white;
+        // }
+
+        a{  
+            display: inline-block;
+            &:link,
+            &:visited{
+                text-transform: uppercase;
+                color: $color-white;
+                transition: all .2s ease-in-out;
+            }
+
+            &:hover{
+                transform: scale(1.2);
+                box-shadow: 0 1rem 2rem rgba($color-dark, .4);
+                @include backgroundClip;
+                @include lg(to right, $color-primary-light, $color-primary-dark)
+            }
+        }
+    }
+
+    @include response(phone){
+        .col-6{
+            flex: 0 0 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}
